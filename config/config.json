@@ -1,0 +1,4 @@
+{
+    "clientPort":"13000",
+    "gatewayEndpoint":"http://localhost:12000"
+}

@@ -1,0 +1,74 @@
+<!Doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="http://fonts.googleapis.com/earlyaccess/nanumpenscript.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/retrieveinfo.css">    
+
+    <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>      
+    
+    <title>CNS</title>
+</head>
+<body>
+    <div class="page-head">
+        <nav>
+            <div class="page-head-menu-phone menu-btn">
+                <div class="line line--1"></div>
+                <div class="line line--2"></div>
+                <div class="line line--3"></div>
+            </div>
+    
+            <div class="nav-links">
+                <a href="/wallet/login" class="MSC1 link">Wallet</a>
+                <a href="/domain/mapping" class="MSC2 link">Domain</a>
+                <a href="/retrieve/index" class="MSC3 link">Retrieve</a>
+                <a href="/send/index" class="MSC4 link">Send</a>
+            </div>
+        </nav>
+        <div class="page-head-logo">
+            <a href="/"><img src="/static/css/images/main_logo.png" alt="" loading="lazy" width="200" height="70"></a>
+        </div>
+        <div class="page-head-menu-desktop">
+            <div class="page-head-menu forth">
+                <a href="/send/index" class="MSC4">Send</a>
+            </div>
+            <div class="page-head-menu third">
+                <a href="/retrieve/index" class="MSC3">Retrieve</a>
+            </div>
+            <div class="page-head-menu second">
+                <a href="/domain/mapping" class="MSC2">Domain</a>
+            </div>
+            <div class="page-head-menu first">
+                <a href="/wallet/login" class="MSC1">Wallet</a>
+            </div>
+        </div>
+
+        <div class="signin">
+            <h1>Retrieve</h1>
+            <div class="domain">
+                <div>
+                    {{if eq .ResCode 0}}
+                        <h2>Mapped information</h2>                    
+                        <h3>{{.ResData}}</h3>
+                    {{else}}
+                        <h2>{{.ResMsg}}</h2>
+                        <h2>{{.ResData}}</h2>
+                    {{end}}
+                </div>               
+            </div>
+            <div>
+                {{if eq .ResCode 0}}                    
+                    <a href="javascript:history.back()">Back</a>
+                {{else}}
+                    <a href="javascript:history.back()">Back</a>
+                {{end}}
+            </div>                            
+        </div>        
+    </div>
+    <script src="/static/js/slidebar.js"></script>
+
+</body>
+</html>
